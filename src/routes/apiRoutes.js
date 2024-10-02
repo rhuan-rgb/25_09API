@@ -1,6 +1,9 @@
-const userController = require('../controller/userController')
+const organizadorController = require('../controller/organizadorController');
+const userController = require('../controller/userController');
 
 const router = require('express').Router()
+
+//rotas do usuario
 
 router.post('/user',userController.createUser);
 
@@ -12,5 +15,15 @@ router.put('/user', userController.updateUser);
 
 router.delete('/user/:cpf', userController.deleteUser);
 
-module.exports = router
+//rotas do organizador
+
+router.post('/organizador', organizadorController.createOrganizador);
+
+router.put('/organizador', organizadorController.updateOrganizador);
+
+router.get('/organizador', organizadorController.getAllOrganizador);
+
+router.delete('/organizador/:id', organizadorController.deleteOrganizador);
+
+module.exports = router;
 
